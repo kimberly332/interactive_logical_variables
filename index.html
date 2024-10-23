@@ -13,14 +13,23 @@
 <body>
     <h2>Set values using input fields:</h2>
     <div class="input-section">
-        A: <input type="number" id="inputA" min="0" max="1" step="1">
-        B: <input type="number" id="inputB" min="0" max="1" step="1">
+        A: <input type="number" id="inputA" min="0" max="1" step="1" value="1">
+        B: <input type="number" id="inputB" min="0" max="1" step="1" value="1">
         <button onclick="setInputs()">Set Values</button>
     </div>
 
-    <div class="output" id="output">
-        <p id="outputA">A: ❌</p>
-        <p id="outputB">B: ❌</p>
+    <div class="display-input-section">
+        <p id="display-inputA">A is true</p>
+        <p id="display-inputB">B is true</p>
+    </div>
+
+    <div class="operations">
+        <button onclick="displayAND()">A AND B</button>
+        <button onclick="displayOR()">A OR B</button>
+        <button onclick="displayNOTA()">NOT A</button>
+        <button onclick="displayNOTB()">NOT B</button>
+        
+        <div id="result" class="result">Results: <span id="result-value"></span></div>
     </div>
 
     <script src="./js/main.js"></script>

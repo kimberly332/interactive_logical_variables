@@ -1,50 +1,52 @@
 console.log("fired");
 
-let A = undefined; 
-let B = undefined;
-const initialDisplay = "❌"; // Red cross mark emoji to be displayed when value is unset. This will happen in intial render.
+let A = true; 
+let B = true;
+const resultElement = document.getElementById("result-value");
 
 function setA(value) {
     A = value;
-    updateOutput(A, B);
+    displaySettingValues(A, B);
 }
 
 function setB(value) {
     B = value;
-    updateOutput(A, B);
+    displaySettingValues(A, B);
 }
 
 function setInputs() {
     const inputA = document.getElementById("inputA").value;
     const inputB = document.getElementById("inputB").value;
 
-    if (inputA) {
-        A = inputA === "1";
-    }
+    A = inputA === "1";
+    B = inputB === "1";
 
-    if (inputB) {
-        B = inputB === "1";
-    }
-
-    updateOutput(A, B);
+    displaySettingValues(A, B);
+    resultElement.innerHTML = "";
 }
 
-function updateOutput(valueA, valueB) {
-    const outputElementA = document.getElementById("outputA");
-    const outputElementB = document.getElementById("outputB");
+function displaySettingValues(valueA, valueB) {
+    const displayElementA = document.getElementById("display-inputA");
+    const displayElementB = document.getElementById("display-inputB");
+    displayElementA.innerHTML = `A is ${valueA}`;
+    displayElementB.innerHTML = `B is ${valueB}`;
+}
 
-    if (valueA === undefined) {
-        outputElementA.innerHTML = `A: ${initialDisplay}`;
-    } else {
-        outputElementA.innerHTML = `A: ${valueA}`;
-    }
+function displayAND() {
+    resultElement.innerHTML = `A AND B is ${A && B}`;
+}
 
-    if (valueB === undefined) {
-        outputElementB.innerHTML = `B: ${initialDisplay}`;
-    } else {
-        outputElementB.innerHTML = `B: ${valueB}`;
-    }
+function displayOR() {
+    resultElement.innerHTML = `A OR B is ${A || B}`;
+}
+
+function displayNOTA() {
+    resultElement.innerHTML = `NOT A is ${!A}`;
+}
+
+function displayNOTB() {
+    resultElement.innerHTML = `NOT B is ${!B}`;
 }
 
 // Initialize output
-updateOutput(A, B);
+displaySettingValues(A, B);
