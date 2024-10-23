@@ -28,24 +28,24 @@ function setInputs() {
 function displaySettingValues(valueA, valueB) {
     const displayElementA = document.getElementById("display-inputA");
     const displayElementB = document.getElementById("display-inputB");
-    displayElementA.innerHTML = `A is ${valueA}`;
-    displayElementB.innerHTML = `B is ${valueB}`;
+    displayElementA.innerHTML = "A is " + valueA;
+    displayElementB.innerHTML = "B is " + valueB;
 }
 
 function displayAND() {
-    resultElement.innerHTML = `A AND B is ${A && B}`;
+    resultElement.innerHTML = "A AND B is " + (A && B);
 }
 
 function displayOR() {
-    resultElement.innerHTML = `A OR B is ${A || B}`;
+    resultElement.innerHTML = "A OR B is " + (A || B);
 }
 
 function displayNOTA() {
-    resultElement.innerHTML = `NOT A is ${!A}`;
+    resultElement.innerHTML = "NOT A is " + !A;
 }
 
 function displayNOTB() {
-    resultElement.innerHTML = `NOT B is ${!B}`;
+    resultElement.innerHTML = "NOT B is " + !B;
 }
 
 // Initialize output
