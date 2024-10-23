@@ -23,14 +23,33 @@
         <p id="display-inputB">B is true</p>
     </div>
 
-    <div class="operations">
+    <button onclick="generateRow()">Generate Truth Table Row</button>
+
+    <table id="truth-table">
+        <thead>
+            <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>A AND B</th>
+                <th>A OR B</th>
+                <th>A AND NOT B</th>
+                <th>A OR NOT B</th>
+                <th>(A OR B) AND NOT(A AND B)</th>
+                <th>(A AND B) OR NOT(A OR B)</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+
+    <!-- <div class="operations">
         <button onclick="displayAND()">A AND B</button>
         <button onclick="displayOR()">A OR B</button>
         <button onclick="displayNOTA()">NOT A</button>
         <button onclick="displayNOTB()">NOT B</button>
         
         <div id="result" class="result">Results: <span id="result-value"></span></div>
-    </div>
+    </div> -->
 
     <script src="./js/main.js"></script>
 </body>

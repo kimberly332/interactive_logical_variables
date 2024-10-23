@@ -3,6 +3,7 @@ console.log("fired");
 let A = true; 
 let B = true;
 const resultElement = document.getElementById("result-value");
+const tableBodyElement = document.getElementById("table-body");
 
 function setA(value) {
     A = value;
@@ -32,20 +33,30 @@ function displaySettingValues(valueA, valueB) {
     displayElementB.innerHTML = `B is ${valueB}`;
 }
 
-function displayAND() {
-    resultElement.innerHTML = `A AND B is ${A && B}`;
+function generateRow() {
+    // Calculate
+    const result1 = A && B;
+    const result2 = A || B;
+    const result3 = A && !B;
+    const result4 = A || !B;
+    const result5 = (A || B) && !(A && B);
+    const result6 = (A && B) || !(A || B);
+    
+    const rowValue = "<tr>" + 
+        generateTableData(A) + 
+        generateTableData(B) + 
+        generateTableData(result1) + 
+        generateTableData(result2) + 
+        generateTableData(result3) + 
+        generateTableData(result4) + 
+        generateTableData(result5) +
+        generateTableData(result6) + 
+        "</tr>";
+    tableBodyElement.innerHTML += rowValue;
 }
 
-function displayOR() {
-    resultElement.innerHTML = `A OR B is ${A || B}`;
-}
-
-function displayNOTA() {
-    resultElement.innerHTML = `NOT A is ${!A}`;
-}
-
-function displayNOTB() {
-    resultElement.innerHTML = `NOT B is ${!B}`;
+function generateTableData(data) {
+    return "<td>" + data + "</td>";
 }
 
 // Initialize output
