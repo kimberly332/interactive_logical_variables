@@ -34,15 +34,15 @@ function updateOutput(valueA, valueB) {
     const outputElementB = document.getElementById("outputB");
 
     if (valueA === undefined) {
-        outputElementA.innerHTML = `A: ${initialDisplay}`;
+        outputElementA.innerHTML = "A: " + initialDisplay;
     } else {
-        outputElementA.innerHTML = `A: ${valueA}`;
+        outputElementA.innerHTML = "A: " + valueA;
     }
 
     if (valueB === undefined) {
-        outputElementB.innerHTML = `B: ${initialDisplay}`;
+        outputElementB.innerHTML = "B: " + initialDisplay;
     } else {
-        outputElementB.innerHTML = `B: ${valueB}`;
+        outputElementB.innerHTML = "B: " + valueB;
     }
 }
 
