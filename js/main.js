@@ -2,7 +2,8 @@ console.log("fired");
 
 let A = undefined; 
 let B = undefined;
-const initialDisplay = "❌"; // Red cross mark emoji to be displayed when value is unset. This will happen in intial render.
+// "-" to be displayed when value is unset. This will happen in intial render.
+const initialDisplay = "-"; 
 
 function setA(value) {
     A = value;
